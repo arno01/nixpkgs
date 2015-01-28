@@ -706,6 +706,8 @@ let
 
   enca = callPackage ../tools/text/enca { };
 
+  ent = callPackage ../tools/misc/ent { };
+
   fasd = callPackage ../tools/misc/fasd { };
 
   fop = callPackage ../tools/typesetting/fop { };
