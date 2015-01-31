@@ -674,6 +674,8 @@ let
 
   corosync = callPackage ../servers/corosync { };
 
+  cherrytree = callPackage ../applications/misc/cherrytree { };
+
   chntpw = callPackage ../tools/security/chntpw { };
 
   coprthr = callPackage ../development/libraries/coprthr {
@@ -7462,6 +7464,8 @@ let
   pygobject3 = pythonPackages.pygobject3;
 
   pygtk = pythonPackages.pygtk;
+
+  pygtksourceview = callPackage ../development/python-modules/pygtksourceview { };
 
   pyGtkGlade = pythonPackages.pyGtkGlade;
 
