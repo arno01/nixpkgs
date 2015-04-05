@@ -15,6 +15,10 @@ stdenv.mkDerivation rec {
   preConfigure = ''
     substituteInPlace src/config/settings-get.pl --replace \
       "/usr/bin/env perl" "${perl}/bin/perl"
+
+    configureFlagsArray=(
+      CFLAGS="-fPIE -fstack-protector-all --param ssp-buffer-size=4 -O2 -D_FORTIFY_SOURCE=2" LDFLAGS="-pie -Wl,-z,relro,-z,now"
+    )
   '';
 
   postInstall = stdenv.lib.optionalString stdenv.isDarwin ''
