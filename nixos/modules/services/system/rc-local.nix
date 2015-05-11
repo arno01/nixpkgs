@@ -57,7 +57,8 @@ in
       exit 0
       '';
 
-      serviceConfig.Type = "forking";
+      serviceConfig.Type = "oneshot";
+      serviceConfig.RemainAfterExit = true;
     };
 
   };
